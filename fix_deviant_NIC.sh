@@ -54,10 +54,10 @@ Write_yum_tast() {
 
 if [[ ${OS} == 'Debian' ]] || [[ ${OS} == 'Ubuntu' ]]; then
     Write_apt_task
-    echo -e "[${red}ok${plain}] ${hint}"
+    echo -e "[${green}ok${plain}] ${hint}"
     rm $0
-elif [[ ${OS} == 'CentOS' ]]; then
+else
     Write_yum_task
-    echo -e "[${red}ok${plain}] ${hint}"
+    echo -e "[${green}ok${plain}] ${hint}"
     rm $0
 fi
