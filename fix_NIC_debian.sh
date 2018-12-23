@@ -62,9 +62,7 @@ EOF
 if [[ ! ${CurrentETH} == ${ConfigETH} ]] && [[ ! ${result} -lt 0 ]]; then
     configETH
     echo -e "[${green}Congratulations${plain}] Your fuckin network will be okay! "
-    rm -rf Deviant_NIC.sh
 else
     echo -e "[${green}Congratulations${plain}] Your network seems have no problem, No alternations need to be applied! "
-    rm -rf Deviant_NIC.sh
     exit 1
 fi
