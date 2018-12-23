@@ -39,7 +39,7 @@ Write_apt_task() {
         exit 1
     fi
     chmod 775 ${d_file}
-    update-rc.d ${d_file} defaults 20
+    update-rc.d fix_NIC_debian.sh defaults 60
 }
 
 Write_yum_tast() {
@@ -48,8 +48,8 @@ Write_yum_tast() {
         exit 1
     fi
     chmod 775 ${c_file}
-    chkconfig --add ${c_file}
-    chkconfig ${c_file} on
+    chkconfig --add fix_NIC_redhat.sh
+    chkconfig fix_NIC_redhat.sh on
 }
 
 if [[ ${OS} == 'Debian' ]] || [[ ${OS} == 'Ubuntu' ]]; then
