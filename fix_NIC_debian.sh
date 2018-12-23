@@ -56,7 +56,7 @@ iface lo inet loopback
 auto ${CurrentETH}
 iface ${CurrentETH} inet dhcp
 EOF
-    service networking restart
+    /etc/init.d/network restart
 }
 
 if [[ ! ${CurrentETH} == ${ConfigETH} ]] && [[ ! ${result} -lt 0 ]]; then
