@@ -60,7 +60,7 @@ EOF
     ${refre_net}
 }
 
-if [[ ! ${CurrentETH} == ${ConfigETH} ]] && [[ ! ${result} -lt 0 ]]; then
+if [[ ! ${CurrentETH} == ${ConfigETH} ]] || [[ ! ${result} -lt 0 ]]; then
     configETH
     ${refre_net}
     echo -e "[${green}Congratulations${plain}] Your fuckin network will be okay! "
