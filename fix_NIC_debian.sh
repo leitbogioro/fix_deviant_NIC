@@ -29,6 +29,7 @@ fi
 CurrentETH=`ifconfig -a | awk '{print $1}' | head -n 1`
 ConfigETH=`cat /etc/network/interfaces | sed -n '$p'  | awk '{print $2}'`
 Interface="/etc/network/interfaces"
+refre_net=`/etc/init.d/networking restart`
 
 # Check ping
 IPLists="1.1.1.1 8.8.8.8 9.9.9.9"
@@ -56,11 +57,12 @@ iface lo inet loopback
 auto ${CurrentETH}
 iface ${CurrentETH} inet dhcp
 EOF
-    /etc/init.d/network restart
+    ${refre_net}
 }
 
 if [[ ! ${CurrentETH} == ${ConfigETH} ]] && [[ ! ${result} -lt 0 ]]; then
     configETH
+    ${refre_net}
     echo -e "[${green}Congratulations${plain}] Your fuckin network will be okay! "
 else
     echo -e "[${green}Congratulations${plain}] Your network seems have no problem, No alternations need to be applied! "
