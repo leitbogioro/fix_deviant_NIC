@@ -7,9 +7,9 @@ red='\033[0;31m'
 plain='\033[0m'
 
 d_file="/etc/init.d/fix_NIC_debian.sh"
-d_file_url=""
+d_file_url="https://git.io/fhJ6s"
 c_file="/etc/rc.d/init.d/fix_NIC_redhat.sh"
-c_file_url=""
+c_file_url="https://git.io/fhJ6G"
 hint="Install successfully, it can prevent you from losing network connection after recovery from snapshot! "
 
 # CheckRoot
